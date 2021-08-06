@@ -1,4 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from handler import *
 import json
 import cgi
  
@@ -7,13 +8,6 @@ message2 = {'message': 'miss the parameter: type'}
 message3 = {'message': 'request is not json'}
 host = ('localhost', 8888)
 
-def login_handler(post_dict):
-    data = {'message' : 'ok'}
-    if 'username' not in post_dict:
-        data['message']="miss username"
-    if 'password' not in post_dict:
-        data['message']="miss password"
-    return data
 
 
 
