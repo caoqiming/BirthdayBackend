@@ -45,6 +45,9 @@ class Resquest(BaseHTTPRequestHandler):
             data=query_birthday_handler(post_dict)
         elif post_dict['type']=='insert': #插入生日数据
             data=insert_handler(post_dict)
+        elif post_dict['type']=='delete': #删除生日数据
+            data=delete_birthday_handler(post_dict)
+            
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
