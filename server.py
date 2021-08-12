@@ -47,6 +47,15 @@ class Resquest(BaseHTTPRequestHandler):
             data=insert_handler(post_dict)
         elif post_dict['type']=='delete': #删除生日数据
             data=delete_birthday_handler(post_dict)
+        elif post_dict['type']=='add_user': #添加用户
+            data=add_user_handler(post_dict)
+        elif post_dict['type']=='delete_user': #删除用户，仅自用
+            data=delete_user_handler(post_dict)
+        elif post_dict['type']=='set_tel': #设置电话号码
+            data=set_tel_handler(post_dict)
+        elif post_dict['type']=='clear_tel': #删除电话号码
+            data=clear_tel_handler(post_dict)
+            
             
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
